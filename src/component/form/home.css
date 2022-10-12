@@ -1,0 +1,39 @@
+.home{
+    width: 70%;
+    margin: auto;
+    background: red;
+}
+
+.home_grid{
+    display:flex ;
+    justify-content: space-around;
+    align-items: center;
+   
+}
+.update{
+    padding: .3em .8em;
+    margin: .5em;
+    cursor: pointer;
+}
+
+.delete{
+    padding: .3em .8em;
+    margin: .5em;
+    cursor: pointer;
+}
+ form{
+    width: 80%;
+    margin: auto;
+    
+}
+.add_inp{
+    width: 70%;
+    padding: .3em .8em;
+    margin: 2em 0 auto;
+}
+
+.add_btn{
+    padding: .3em .8em;
+    /* margin: .5em; */
+    cursor: pointer;
+}
