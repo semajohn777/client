@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import  "../component/form/form.css"
+import { useNavigate } from 'react-router-dom'
 import { UseLogin } from '../component/hooks/useLogIn'
 import { useUserContext } from '../component/hooks/UserHooks'
 
@@ -10,6 +10,7 @@ const Login =  () => {
     const [password, setPassword] = useState("")
     // const [error, setError] = useState(null)
     const {login, error, isLoading } = UseLogin()
+    const navigate = useNavigate()
 
     const handleSubmit = async(e)=>{
         e.preventDefault()
@@ -31,10 +32,11 @@ const Login =  () => {
         //     setPassword("")
         // } 
         await login(values)
+        navigate("/")
     }
   return (
     <div>
-        <form action=""  className='form' onSubmit={handleSubmit}>
+        <form action=""  className='signUpForm' onSubmit={handleSubmit}>
             <label htmlFor="">Email</label>
         <div>
             <input type="email" 

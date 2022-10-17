@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useCommentContext } from '../hooks/CommentHooks'
+import { useUserContext } from '../hooks/UserHooks'
+import "../form/home.css"
 
 
 
@@ -8,13 +10,18 @@ const Update = () => {
   const [comment, setComment] = useState("")
   const {id} = useParams()
   const navigate = useNavigate()
-  const {comment: ccc, dispatch, user} = useCommentContext()
+  const {comment: ccc, dispatch} = useCommentContext()
+  const {user} = useUserContext()
   if (!user) {
     console.log(user);
 }
 
 const fetchHandle = async ()=>{
-    const response = await fetch(`http://localhost:5000/single/${id}`)
+    const response = await fetch(`http://localhost:5000/single/${id}`, {
+      headers : {"Content-Type": "application/json",
+      "Authorization": `Bearer ${user.token} `
+    },
+    })
     const json = await response.json()
     if (response.ok) {
       setComment(json.comment)
@@ -46,7 +53,7 @@ useEffect (()=>{
     return (
     <div>
         <form action="" onSubmit={handleUpdate}>
-                <input type="text" name="comment" id="" 
+                <input className='add_inp' type="text" name="comment" id="" 
                 value={comment}
                 onChange={(e)=>setComment(e.target.value)}/>
                 <button>Submit</button>

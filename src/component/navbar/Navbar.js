@@ -3,6 +3,7 @@ import "./Navbar.css"
 import {Link} from "react-router-dom"
 import { useUserContext } from '../hooks/UserHooks'
 import { useCommentContext } from '../hooks/CommentHooks'
+import "../form/home.css"
 
 const Navbar = () => {
   const { dispatch: userDispatch, user } = useUserContext()
@@ -14,24 +15,26 @@ const Navbar = () => {
       userDispatch({ type: "LOG_OUT" })
   }
   return (
-    <div>
+    <header>
         <nav>
+          
+            <h2><Link to="/">Se<span>ma</span></Link></h2>
           {user && (
             <div>
              <span>{user.username}</span>
              <span>{user.email}</span>
-             <button onClick={logOut}>Log out</button>
+             <button className='logout' onClick={logOut}>Log out</button>
              </div>
           ) 
            }
-          
-            <h2><Link to="/">Sema Project</Link></h2>
-            <ul>
-                <li><Link to={"/signup"}>Sign Up </Link></li>
-                <li><Link to={"/login"}>Login </Link></li>
-            </ul>
+           {!user && (
+             <ul>
+             <li><Link to={"/signup"}>Sign Up </Link></li>
+             <li><Link to={"/login"}>Login </Link></li>
+         </ul>
+           )}
         </nav>
-    </div>
+    </header>
   )
 }
 

@@ -1,39 +1,128 @@
+body{
+    background: rgb(5, 133, 136);
+
+}
 .home{
     width: 70%;
     margin: auto;
-    background: red;
+    color: white;
+    /* border: 1px solid rgb(55, 252, 29); */
 }
 
 .home_grid{
     display:flex ;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    border: 1px solid rgb(55, 252, 29);
+    width: 80%;
+    margin: 1em auto;
+    border-radius: .3rem;
+    padding: 0 2em;
+    box-shadow: 2px 4px 4px rgba(255, 255, 255, 0.2)
    
 }
-.update{
+
+
+
+button{
     padding: .3em .8em;
     margin: .5em;
     cursor: pointer;
+    padding: .4em 1em;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 1px solid #fff;
+    border-radius: .3em;
+    background-color: rgb(55, 252, 29);
+    color: rgb(5, 133, 136);
+    
+}
+a{
+    text-decoration: none;
+    color: #fff;
+   
 }
 
 .delete{
-    padding: .3em .8em;
-    margin: .5em;
-    cursor: pointer;
+    background-color: red;
+    color: #fff;
 }
- form{
-    width: 80%;
-    margin: auto;
-    
-}
-.add_inp{
-    width: 70%;
-    padding: .3em .8em;
-    margin: 2em 0 auto;
+.logout{
+    background-color: rgb(5, 133, 136);
+    color: #fff;
 }
 
-.add_btn{
-    padding: .3em .8em;
-    /* margin: .5em; */
-    cursor: pointer;
+li{
+    background-color: rgb(5, 133, 136) ;
+    color: rgb(55, 252, 29);
 }
+
+.logout:hover{
+    background-color: blueviolet;
+}
+ form{
+    width: 87%;
+    background-color: rgb(209, 151, 4);
+    margin:1em auto;
+    padding: 1em 0;
+    border-radius: .4em;
+
+    
+}
+
+
+.add_inp{
+    width: 68%;
+    margin-left: 1em;
+    padding: .5em .5em 0 .5em ;
+    font-size: 1.5rem;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(55, 252, 29); 
+} 
+
+span{
+    font-size: 1.3rem;
+    color: rgb(5, 133, 136);
+}
+
+form.signUpForm{
+    width:30% ;
+    margin: auto;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.signUpForm input{
+    background-color: transparent;
+    border:1px solid rgb(55, 252, 29);
+    outline: none;
+    font-size: 1.2rem;
+    padding: .5em;
+    border-radius: .3rem;
+    color: #fff;
+}
+
+.signUpForm label{
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: .6em;
+}
+
+@media screen and (max-width: 1024px) {
+    .home_grid_first_div {
+            width: 90%;
+        }
+}
+
+@media screen and (max-width: 1024px) {
+    .home_grid_first_div {
+        width: 80%;
+    }
+}
+

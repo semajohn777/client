@@ -1,11 +1,12 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { useCommentContext } from '../hooks/CommentHooks'
 import {formatDistanceToNow} from "date-fns" 
+import { useUserContext } from '../hooks/UserHooks'
 
 const Delete = ({commentProps}) => {
     const {dispatch} = useCommentContext()
-    const {user} = useCommentContext()
+    const {user} = useUserContext()
     const deleteFunction = async()=>{
         if (!user) {
             return
@@ -26,11 +27,11 @@ const Delete = ({commentProps}) => {
   return (
     <div>
         <div className='home_grid' >
-                          <div>
+                          <div className='home_grid_first_div'>
                               <h1>{commentProps.comment}</h1>
                               <p>{formatDistanceToNow(new Date(commentProps.createdAt), {addSuffix: true})}</p>
                           </div>
-                          <div>
+                          <div className='home_grid_second_div'>
                           <button className='update' ><Link to={`/update/${commentProps._id}`}>Update</Link> </button>
                               <button className='delete'onClick={deleteFunction} >Delete</button>
                           </div>

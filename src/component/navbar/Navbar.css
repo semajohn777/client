@@ -6,6 +6,12 @@ nav{
     margin: auto;
 }
 
+header{
+    /* background-color: aquamarine; */
+    background-color: rgb(55, 252, 29);
+
+}
+
 /* ul{
     display: inline;
     justify-content: space-between;
@@ -15,7 +21,8 @@ nav{
 li{
     display: inline;
     margin: 1em;
-    background-color: green;
+    background-color: rgb(5, 133, 136);
     padding: .5em 1em;
     color: white;
+    border-radius: .3em;
 }

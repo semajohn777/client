@@ -38,11 +38,17 @@ const Create = () => {
   return (
     <div>
         <form onSubmit={thankSubmit}>
-            <input type="text" 
+           {/* <div className='form'> */}
+           <input type="text" 
             value={comment}
-             onChange={(e)=>{setComment(e.target.value)}} className='add_inp'
-             />
-            <button className='add_btn'>Add Comment</button>
+             onChange={(e)=>{setComment(e.target.value)}} 
+             className='add_inp' />
+             {/*  */}
+             {/* <input type="text" /> */}
+             
+            <button className='add_btn'>Add Comment</button> 
+            {/*  */}
+           {/* </div> */}
             {error  && <div>{error}</div> }
         </form>
     </div>

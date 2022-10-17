@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import  "../component/form/form.css"
 // import { useUserContext } from '../component/hooks/UserHooks'
 import { UseSignup } from '../component/hooks/UseSignup'
+import "../component/form/home.css"
 
 
 const Signup = () => {
@@ -15,6 +15,7 @@ const Signup = () => {
     //  const [error, setError] = useState(null)
      const navigate = useNavigate()
      const {signup, error} = UseSignup()
+    
      
 
     const handleSubmit = async(e)=>{
@@ -22,6 +23,8 @@ const Signup = () => {
         const values = {username, email, password} 
         console.log(values);
         await signup(username, email, password)
+        navigate("/login")
+
         // const response =  await fetch("http://localhost:5000/signup", {
         //     method:"POST",
         //      headers : {"Content-Type": "application/json"},
@@ -44,7 +47,7 @@ const Signup = () => {
     }
   return (
     <div>
-        <form className='form' onSubmit={handleSubmit}>
+        <form className='signUpForm' onSubmit={handleSubmit}>
             <label htmlFor="">UserName</label>
         <div>
             <input type="text" 
