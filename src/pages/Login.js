@@ -32,7 +32,6 @@ const Login =  () => {
         //     setPassword("")
         // } 
         await login(values)
-        navigate("/")
     }
   return (
     <div>
@@ -52,8 +51,8 @@ const Login =  () => {
             onChange={(e)=>setPassword(e.target.value)}
             />
         </div>
+        {error  && <div className='err'>{error}</div> }
         <button>Submit</button>
-        {error  && <div>{error}</div> }
         </form>
     </div>
   )

@@ -1,10 +1,14 @@
 import { useState } from "react";
 import { useUserContext } from "./UserHooks";
+import { useNavigate } from 'react-router-dom'
+
 
 export const UseLogin = ()=>{
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(null)
-    const {dispatch } = useUserContext()
+    const { dispatch } = useUserContext()
+    const navigate = useNavigate()
+
     
     // const values = {email, password}
     const login = async(email, password)=>{
@@ -21,12 +25,13 @@ export const UseLogin = ()=>{
         if (!response.ok) {
             // setIsLoading(false)
             setError(json.error)
+            console.log(json.error);
         }else{
             // saving
             localStorage.setItem("User", JSON.stringify(json))
-            dispatch({type: "LOG_IN", payload: json}) 
+            dispatch({ type: "LOG_IN", payload: json })
+             navigate("/")
         }
-
 
         // setIsLoading(false)
         

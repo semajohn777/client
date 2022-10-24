@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 // import { useUserContext } from '../component/hooks/UserHooks'
 import { UseSignup } from '../component/hooks/UseSignup'
 import "../component/form/home.css"
@@ -13,7 +12,6 @@ const Signup = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     //  const [error, setError] = useState(null)
-     const navigate = useNavigate()
      const {signup, error} = UseSignup()
     
      
@@ -23,7 +21,7 @@ const Signup = () => {
         const values = {username, email, password} 
         console.log(values);
         await signup(username, email, password)
-        navigate("/login")
+       
 
         // const response =  await fetch("http://localhost:5000/signup", {
         //     method:"POST",
@@ -71,8 +69,8 @@ const Signup = () => {
             onChange={(e)=>setPassword(e.target.value)}
             />
         </div>
+        {error  && <div className='err'>{error}</div> }
         <button>Submit</button>
-        {error  && <div>{error}</div> }
        
         </form>
     </div>
