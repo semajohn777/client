@@ -12,7 +12,7 @@ const Delete = ({commentProps}) => {
             return
         }
         
-        const response = await fetch(`http://localhost:5000/delete/${commentProps._id}`, {
+        const response = await fetch(`https://comenting.herokuapp.com/delete/${commentProps._id}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${user.token}`

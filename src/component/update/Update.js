@@ -17,7 +17,7 @@ const Update = () => {
 }
 
 const fetchHandle = async ()=>{
-    const response = await fetch(`http://localhost:5000/single/${id}`, {
+    const response = await fetch(`https://comenting.herokuapp.com/single/${id}`, {
       headers : {"Content-Type": "application/json",
       "Authorization": `Bearer ${user.token} `
     },
