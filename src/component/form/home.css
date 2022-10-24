@@ -114,6 +114,14 @@ form.signUpForm{
     margin-bottom: .6em;
 }
 
+.home_grid_first_div {
+    width: 70%;
+}
+
+.home_grid_second_div{
+    display: flex;
+}
+
 @media screen and (max-width: 1024px) {
     .home_grid_first_div {
             width: 90%;
@@ -124,5 +132,10 @@ form.signUpForm{
     .home_grid_first_div {
         width: 80%;
     }
+
+        .home_grid_second_div {
+            display: flex;
+            flex-direction: column;
+        }
 }
 

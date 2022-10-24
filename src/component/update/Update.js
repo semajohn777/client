@@ -33,7 +33,7 @@ const fetchHandle = async ()=>{
   const handleUpdate = async (e)=>{
     e.preventDefault()
     const value = {comment}
-    const response = await fetch(`http://localhost:5000/update/${id}`, {
+    const response = await fetch(`https://comenting.herokuapp.com/update/${id}`, {
       method:"PATCH",
       headers : {"Content-Type": "application/json",
       "Authorization": `Bearer ${user.token} `
